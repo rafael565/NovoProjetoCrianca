@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
+using NovoProjetoCrianca.Models.Consultas;
 
 namespace ProjetoFundacaoCrianca.Models
 {
@@ -23,6 +24,7 @@ namespace ProjetoFundacaoCrianca.Models
         public DbSet<Atendimento> Atendimentos { get; set; }
 
         public DbSet<Materia> Materias  { get; set; }
+        public DbSet<NovoProjetoCrianca.Models.Consultas.ProfesTurmCurso> ProfesTurmCurso { get; set; }
 
 
 

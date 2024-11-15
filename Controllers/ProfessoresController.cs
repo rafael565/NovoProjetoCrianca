@@ -21,7 +21,8 @@ namespace NovoProjetoCrianca.Controllers
         // GET: Professores
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Professores.ToListAsync());
+            var contexto = _context.Professores.Include(p => p.turma);
+            return View(await contexto.ToListAsync());
         }
 
         // GET: Professores/Details/5
@@ -33,6 +34,7 @@ namespace NovoProjetoCrianca.Controllers
             }
 
             var professor = await _context.Professores
+                .Include(p => p.turma)
                 .FirstOrDefaultAsync(m => m.id == id);
             if (professor == null)
             {
@@ -45,6 +47,7 @@ namespace NovoProjetoCrianca.Controllers
         // GET: Professores/Create
         public IActionResult Create()
         {
+            ViewData["turmaID"] = new SelectList(_context.Turmas, "id", "nomeTurma");
             return View();
         }
 
@@ -53,7 +56,7 @@ namespace NovoProjetoCrianca.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,nome,email,telefone,especializacao")] Professor professor)
+        public async Task<IActionResult> Create([Bind("id,nome,email,telefone,especializacao,turmaID")] Professor professor)
         {
             if (ModelState.IsValid)
             {
@@ -61,6 +64,7 @@ namespace NovoProjetoCrianca.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["turmaID"] = new SelectList(_context.Turmas, "id", "nomeTurma", professor.turmaID);
             return View(professor);
         }
 
@@ -77,6 +81,7 @@ namespace NovoProjetoCrianca.Controllers
             {
                 return NotFound();
             }
+            ViewData["turmaID"] = new SelectList(_context.Turmas, "id", "nomeTurma", professor.turmaID);
             return View(professor);
         }
 
@@ -85,7 +90,7 @@ namespace NovoProjetoCrianca.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,nome,email,telefone,especializacao")] Professor professor)
+        public async Task<IActionResult> Edit(int id, [Bind("id,nome,email,telefone,especializacao,turmaID")] Professor professor)
         {
             if (id != professor.id)
             {
@@ -112,6 +117,7 @@ namespace NovoProjetoCrianca.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["turmaID"] = new SelectList(_context.Turmas, "id", "nomeTurma", professor.turmaID);
             return View(professor);
         }
 
@@ -124,6 +130,7 @@ namespace NovoProjetoCrianca.Controllers
             }
 
             var professor = await _context.Professores
+                .Include(p => p.turma)
                 .FirstOrDefaultAsync(m => m.id == id);
             if (professor == null)
             {

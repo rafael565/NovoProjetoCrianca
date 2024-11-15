@@ -35,6 +35,11 @@
                 <span asp-validation-for="especializacao" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="turmaID" class="control-label"></label>
+                <select asp-for="turmaID" class="form-control" asp-items="ViewBag.turmaID"></select>
+                <span asp-validation-for="turmaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>

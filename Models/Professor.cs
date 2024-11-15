@@ -31,6 +31,10 @@ namespace ProjetoFundacaoCrianca.Models
         public string especializacao { get; set; }
 
 
+        public Turma turma { get; set; }
+        [Display(Name = "Turma: ")]
+        public int turmaID { get; set; }
+
 
 
 

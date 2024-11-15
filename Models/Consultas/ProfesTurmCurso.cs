@@ -1,4 +1,4 @@
-﻿namespace NovoProjetoCrianca.Models
+﻿namespace NovoProjetoCrianca.Models.Consultas
 {
     public class ProfesTurmCurso
     {
@@ -7,6 +7,6 @@
 
         public string turma { get; set; }
 
-       public string curso { get; set; }
+        public string curso { get; set; }
     }
 }
