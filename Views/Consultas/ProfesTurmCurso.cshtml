@@ -5,11 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>ProfesTurmCurso</h1>
+<h1>Status Academico</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -37,11 +35,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.curso)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
-            </td>
+         
         </tr>
 }
     </tbody>
