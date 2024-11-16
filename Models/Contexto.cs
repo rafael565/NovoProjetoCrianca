@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
+using NovoProjetoCrianca.Migrations;
 using NovoProjetoCrianca.Models.Consultas;
 
 namespace NovoProjetoCrianca.Models
@@ -25,6 +26,7 @@ namespace NovoProjetoCrianca.Models
 
         public DbSet<Materia> Materias  { get; set; }
         public DbSet<NovoProjetoCrianca.Models.Consultas.ProfesTurmCurso> ProfesTurmCurso { get; set; }
+        public DbSet<ContextoModelSnapshot> ContextoModelSnapshot { get; set; }
 
 
 
