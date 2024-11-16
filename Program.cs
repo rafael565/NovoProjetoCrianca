@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using NovoProjetoCrianca.Data;
-using ProjetoFundacaoCrianca.Models;
+using NovoProjetoCrianca.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

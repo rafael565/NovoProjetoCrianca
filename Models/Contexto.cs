@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Internal;
 using NovoProjetoCrianca.Models.Consultas;
 
-namespace ProjetoFundacaoCrianca.Models
+namespace NovoProjetoCrianca.Models
 {
     public class Contexto: DbContext
     {

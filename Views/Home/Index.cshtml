@@ -2,7 +2,93 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f9;
+            font-family: 'Arial', sans-serif;
+        }
+        .hero-section {
+            background-color: #007bff;
+            color: white;
+            padding: 80px 0;
+        }
+        .hero-section h1 {
+            font-size: 3rem;
+        }
+        .hero-section p {
+            font-size: 1.2rem;
+        }
+        .btn-custom {
+            background-color: #28a745;
+            color: white;
+        }
+        .btn-custom:hover {
+            background-color: #218838;
+        }
+        .card-body {
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid hero-section text-center">
+        <h1 class="display-4">Bem-vindo à Fundação Criança Feliz</h1>
+        <p class="lead">Juntos, podemos transformar a vida de crianças e adolescentes!</p>
+        <a href="#sobre" class="btn btn-custom btn-lg">Saiba Mais</a>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="~/css/images (4).jpeg" class="card-img-top" alt="Imagem sobre nossa missão">
+                    <div class="card-body">
+                        <h5 class="card-title">Nossa Missão</h5>
+                        <p class="card-text">Acreditamos no poder da educação e apoio integral para promover o desenvolvimento saudável de crianças e adolescentes.</p>
+                        <a href="#missao" class="btn btn-primary">Leia mais</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="~/css/images (3).jpeg" class="card-img-top" alt="Imagem de nossas atividades">
+                    <div class="card-body">
+                        <h5 class="card-title">Nossas Atividades</h5>
+                        <p class="card-text">Oferecemos atividades recreativas, educativas e de assistência social para o desenvolvimento pleno de cada criança.</p>
+                        <a href="#atividades" class="btn btn-primary">Saiba mais</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img src="~/css/images (2).jpeg" class="card-img-top" alt="Imagem sobre parcerias">
+                    <div class="card-body">
+                        <h5 class="card-title">Nossas Parcerias</h5>
+                        <p class="card-text">Apoiamos nossas ações através de parcerias com empresas e organizações sociais comprometidas com a causa infantil.</p>
+                        <a href="#parcerias" class="btn btn-primary">Descubra como ajudar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-4 mt-5" style="background-color: #f8f9fa;">
+        <p>Fundação Criança Feliz &copy; 2024 | Todos os direitos reservados</p>
+        <a href="https://www.instagram.com" class="btn btn-link">Instagram</a> |
+        <a href="https://www.facebook.com" class="btn btn-link">Facebook</a>
+    </footer>
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
