@@ -40,7 +40,7 @@ namespace NovoProjetoCrianca.Models
         [Display(Name = "Data de Nascimento")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime DatadeNascimento { get; set; }
+        public DateOnly DatadeNascimento { get; set; }
 
 
         [Required(ErrorMessage = "Campo E-mail é obrigatório")]
