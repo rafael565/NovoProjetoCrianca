@@ -5,45 +5,59 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+<div class="container mt-4">
+    <h1 class="text-center text-primary">Cadastrar Assistente Social</h1>
+    <h4 class="text-center text-secondary">Preencha as informações do Assistente Social</h4>
+    <hr />
 
-<h4>AssistenteSocial</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="nome" class="control-label"></label>
-                <input asp-for="nome" class="form-control" />
-                <span asp-validation-for="nome" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="cpf" class="control-label"></label>
-                <input asp-for="cpf" class="form-control" />
-                <span asp-validation-for="cpf" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="email" class="control-label"></label>
-                <input asp-for="email" class="form-control" />
-                <span asp-validation-for="email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="telefone" class="control-label"></label>
-                <input asp-for="telefone" class="form-control" />
-                <span asp-validation-for="telefone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+				
+				<div class="form-group">
+                    <label asp-for="nome" class="control-label font-weight-bold">Nome</label>
+                    <input asp-for="nome" class="form-control" placeholder="Nome completo" />
+                    <span asp-validation-for="nome" class="text-danger"></span>
+                </div>
+
+                
+                <div class="form-group">
+                    <label asp-for="cpf" class="control-label font-weight-bold">CPF</label>
+                    <input asp-for="cpf" class="form-control" placeholder="CPF" />
+                    <span asp-validation-for="cpf" class="text-danger"></span>
+                </div>
+
+              
+                <div class="form-group">
+                    <label asp-for="email" class="control-label font-weight-bold">E-mail</label>
+                    <input asp-for="email" class="form-control" placeholder="E-mail" />
+                    <span asp-validation-for="email" class="text-danger"></span>
+                </div>
+
+                
+                <div class="form-group">
+                    <label asp-for="telefone" class="control-label font-weight-bold">Telefone</label>
+                    <input asp-for="telefone" class="form-control" placeholder="Telefone" />
+                    <span asp-validation-for="telefone" class="text-danger"></span>
+                </div>
+
+                
+                <div class="form-group text-center">
+                    <input type="submit" value="Criar" class="btn btn-success btn-lg" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="text-center mt-3">
+        <a asp-action="Index" class="btn btn-outline-secondary">Voltar para a Lista</a>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

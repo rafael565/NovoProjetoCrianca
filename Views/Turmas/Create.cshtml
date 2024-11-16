@@ -10,44 +10,60 @@
 <h4>Turma</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6 offset-md-3">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+          
             <div class="form-group">
-                <label asp-for="cursoID" class="control-label"></label>
-                <select asp-for="cursoID" class ="form-control" asp-items="ViewBag.cursoID"></select>
+                <label asp-for="cursoID" class="control-label">Curso</label>
+                <select asp-for="cursoID" class="form-control" asp-items="ViewBag.cursoID">
+                    <option value="">Selecione um Curso</option>
+                </select>
+                <span asp-validation-for="cursoID" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="nomeTurma" class="control-label"></label>
+                <label asp-for="nomeTurma" class="control-label">Nome da Turma</label>
                 <input asp-for="nomeTurma" class="form-control" />
                 <span asp-validation-for="nomeTurma" class="text-danger"></span>
             </div>
+
+          
             <div class="form-group">
-                <label asp-for="serie" class="control-label"></label>
+                <label asp-for="serie" class="control-label">Série</label>
                 <input asp-for="serie" class="form-control" />
                 <span asp-validation-for="serie" class="text-danger"></span>
             </div>
+
+           
             <div class="form-group">
-                <label asp-for="maximoAluno" class="control-label"></label>
+                <label asp-for="maximoAluno" class="control-label">Máximo de Alunos</label>
                 <input asp-for="maximoAluno" class="form-control" />
                 <span asp-validation-for="maximoAluno" class="text-danger"></span>
             </div>
+
+          
             <div class="form-group">
-                <label asp-for="minimoAluno" class="control-label"></label>
+                <label asp-for="minimoAluno" class="control-label">Mínimo de Alunos</label>
                 <input asp-for="minimoAluno" class="form-control" />
                 <span asp-validation-for="minimoAluno" class="text-danger"></span>
             </div>
+
+         
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary btn-block" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="text-center mt-3">
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

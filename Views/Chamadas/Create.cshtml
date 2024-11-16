@@ -5,37 +5,53 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+<div class="container mt-4">
+    <h1 class="text-center text-primary">Registrar Chamada</h1>
+    <h4 class="text-center text-secondary">Preencha as informações para registrar a chamada</h4>
+    <hr />
 
-<h4>Chamada</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="matriculaID" class="control-label"></label>
-                <select asp-for="matriculaID" class ="form-control" asp-items="ViewBag.matriculaID"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="DatadeChamada" class="control-label"></label>
-                <input asp-for="DatadeChamada" class="form-control" />
-                <span asp-validation-for="DatadeChamada" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Presenca" class="control-label"></label>
-                <input asp-for="Presenca" class="form-control" />
-                <span asp-validation-for="Presenca" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                
+                <div class="form-group">
+                    <label asp-for="matriculaID" class="control-label font-weight-bold">Matrícula</label>
+                    <select asp-for="matriculaID" class="form-control" asp-items="ViewBag.matriculaID">
+                        <option value="">Selecione a Matrícula</option>
+                    </select>
+                    <span asp-validation-for="matriculaID" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="DatadeChamada" class="control-label font-weight-bold">Data da Chamada</label>
+                    <input asp-for="DatadeChamada" class="form-control" type="date" />
+                    <span asp-validation-for="DatadeChamada" class="text-danger"></span>
+                </div>
+
+               
+                <div class="form-group">
+                    <label asp-for="Presenca" class="control-label font-weight-bold">Presença</label>
+                    <select asp-for="Presenca" class="form-control">
+                        <option value="">Selecione a Presença</option>
+                        <option value="sim">Presente</option>
+                        <option value="nao">Ausente</option>
+                    </select>
+                    <span asp-validation-for="Presenca" class="text-danger"></span>
+                </div>
+
+              
+                <div class="form-group text-center">
+                    <input type="submit" value="Registrar Chamada" class="btn btn-success btn-lg" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+    <div class="text-center mt-3">
+        <a asp-action="Index" class="btn btn-outline-secondary">Voltar para a Lista</a>
+    </div>
 </div>
 
 @section Scripts {

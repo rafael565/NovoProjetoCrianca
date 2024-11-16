@@ -5,34 +5,44 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+<h1>Create Matéria</h1>
 
-<h4>Materia</h4>
+<h4>Matéria</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6 offset-md-3">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
-                <label asp-for="CursoID" class="control-label"></label>
-                <select asp-for="CursoID" class ="form-control" asp-items="ViewBag.CursoID"></select>
+                <label asp-for="CursoID" class="control-label">Curso</label>
+                <select asp-for="CursoID" class="form-control" asp-items="ViewBag.CursoID">
+                    <option value="">Selecione um Curso</option>
+                </select>
+                <span asp-validation-for="CursoID" class="text-danger"></span>
             </div>
+
+            
             <div class="form-group">
-                <label asp-for="nome" class="control-label"></label>
-                <input asp-for="nome" class="form-control" />
+                <label asp-for="nome" class="control-label">Nome da Matéria</label>
+                <input asp-for="nome" class="form-control" placeholder="Informe o nome da matéria" />
                 <span asp-validation-for="nome" class="text-danger"></span>
             </div>
+
+            
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary btn-block" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="text-center mt-3">
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
