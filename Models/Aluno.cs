@@ -24,24 +24,23 @@ namespace ProjetoFundacaoCrianca.Models
         [Required(ErrorMessage = "Campo CPF é obrigatório")]
         [StringLength(35)]
         [Display(Name = "CPF: ")]
-        public long cpf { get; set; }
+        public string cpf { get; set; }
 
 
-        [Required(ErrorMessage = "Campo Genero é obrigatório")]
+        
         
         [Display(Name = "Genero: ")]
         public Genero genero { get; set; }
 
-        [Required(ErrorMessage = "Campo Escolaridade é obrigatório")]
-        [StringLength(35)]
+        
         [Display(Name = "Escolaridade: ")]
         public Escolaridade escolaridade { get; set; }
 
 
-        [Display(Name = "Data de Nascimento: ")]
-        public DateOnly DatadeNascimento { get; set; }
-
-
+        [Display(Name = "Data de Nascimento")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime DatadeNascimento { get; set; }
 
 
         [Required(ErrorMessage = "Campo E-mail é obrigatório")]
