@@ -8,7 +8,7 @@ namespace NovoProjetoCrianca.Models
     [Table("Alunos")]
     public class Aluno
     {
-
+        [Key]
         [Display(Name = "ID: ")]
         public int id { get; set; }
 

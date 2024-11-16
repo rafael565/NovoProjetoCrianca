@@ -8,17 +8,17 @@ namespace NovoProjetoCrianca.Controllers
 {
     public class DadosController : Controller
     {
-        private readonly Contexto contexto;
+        private readonly Contexto _context;
 
         public DadosController(Contexto context)
         {
-            contexto = context;
+            _context = context;
         }
 
         public IActionResult Aluno()
         {
-            contexto.Database.ExecuteSqlRaw("delete from alunos");
-            contexto.Database.ExecuteSqlRaw("DBCC CHECKIDENT('alunos', RESEED, 0)");
+            _context.Database.ExecuteSqlRaw("delete from alunos");
+            _context.Database.ExecuteSqlRaw("DBCC CHECKIDENT('alunos', RESEED, 0)");
 
             Random randNum = new Random();
 
@@ -30,7 +30,7 @@ namespace NovoProjetoCrianca.Controllers
             {
                 Aluno aluno = new Aluno();
 
-                aluno.dadofamiliaID = randNum.Next(1, 100);
+                aluno.dadofamiliaID = randNum.Next(1, _context.DadosFamilias.Count() + 1);
                 aluno.nome = (i % 2 == 0) ? vNomeMas[i / 2] : vNomeFem[i / 2];
                 Int64 Ncpf = randNum.NextInt64(11111111111, 99999999999);
                 aluno.cpf = string.Join("", Ncpf);
@@ -42,12 +42,12 @@ namespace NovoProjetoCrianca.Controllers
                 DateOnly dataNascimento = new DateOnly(ano, mes, dia);
                 aluno.DatadeNascimento = dataNascimento;
                 aluno.email = aluno.nome.ToLower() + "@gmail.com.br";
-                contexto.Alunos.Add(aluno);
+                _context.Alunos.Add(aluno);
             }
 
-            contexto.SaveChanges();
+            _context.SaveChanges();
 
-            return View(contexto.Alunos.OrderBy(o => o.id).ToList());
+            return View(_context.Alunos.OrderBy(o => o.id).ToList());
         }
     }
 

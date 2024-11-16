@@ -99,19 +99,18 @@ namespace NovoProjetoCrianca.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Professores",
+                name: "ProfesTurmCurso",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    nome = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: false),
-                    email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    telefone = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: false),
-                    especializacao = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                    professor = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    turma = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    curso = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Professores", x => x.id);
+                    table.PrimaryKey("PK_ProfesTurmCurso", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -165,9 +164,9 @@ namespace NovoProjetoCrianca.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     dadofamiliaID = table.Column<int>(type: "int", nullable: false),
                     nome = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: false),
-                    cpf = table.Column<long>(type: "bigint", maxLength: 35, nullable: false),
+                    cpf = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: false),
                     genero = table.Column<int>(type: "int", nullable: false),
-                    escolaridade = table.Column<int>(type: "int", maxLength: 35, nullable: false),
+                    escolaridade = table.Column<int>(type: "int", nullable: false),
                     DatadeNascimento = table.Column<DateOnly>(type: "date", nullable: false),
                     email = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: false)
                 },
@@ -257,6 +256,29 @@ namespace NovoProjetoCrianca.Migrations
                         name: "FK_Visitas_DadosFamilias_dadofamiliaID",
                         column: x => x.dadofamiliaID,
                         principalTable: "DadosFamilias",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Professores",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    nome = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: false),
+                    email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    telefone = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: false),
+                    especializacao = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    turmaID = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Professores", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_Professores_Turmas_turmaID",
+                        column: x => x.turmaID,
+                        principalTable: "Turmas",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -401,6 +423,11 @@ namespace NovoProjetoCrianca.Migrations
                 column: "dadofamiliaID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Professores_turmaID",
+                table: "Professores",
+                column: "turmaID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Turmas_cursoID",
                 table: "Turmas",
                 column: "cursoID");
@@ -439,6 +466,9 @@ namespace NovoProjetoCrianca.Migrations
 
             migrationBuilder.DropTable(
                 name: "Professores");
+
+            migrationBuilder.DropTable(
+                name: "ProfesTurmCurso");
 
             migrationBuilder.DropTable(
                 name: "Visitas");

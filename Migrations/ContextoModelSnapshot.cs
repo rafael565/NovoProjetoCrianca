@@ -11,41 +11,18 @@ using NovoProjetoCrianca.Models;
 namespace NovoProjetoCrianca.Migrations
 {
     [DbContext(typeof(Contexto))]
-    public partial class ContextoModelSnapshot : ModelSnapshot
+    partial class ContextoModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.Entity<ContextoModelSnapshot>().HasNoKey();
             modelBuilder
                 .HasAnnotation("ProductVersion", "9.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("NovoProjetoCrianca.Models.Consultas.ProfesTurmCurso", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
-
-                    b.Property<string>("curso")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("professor")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("turma")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("ProfesTurmCurso");
-                });
-
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.Aluno", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.Aluno", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -87,7 +64,7 @@ namespace NovoProjetoCrianca.Migrations
                     b.ToTable("Alunos");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.AssistenteSocial", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.AssistenteSocial", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -120,7 +97,7 @@ namespace NovoProjetoCrianca.Migrations
                     b.ToTable("AssistentesSociais");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.Atendimento", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.Atendimento", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -151,7 +128,7 @@ namespace NovoProjetoCrianca.Migrations
                     b.ToTable("Atendimentos");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.Atividade", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.Atividade", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -182,7 +159,7 @@ namespace NovoProjetoCrianca.Migrations
                     b.ToTable("Atividades");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.Chamada", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.Chamada", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -208,7 +185,29 @@ namespace NovoProjetoCrianca.Migrations
                     b.ToTable("Chamadas");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.Curso", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.Consultas.ProfesTurmCurso", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("curso")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("professor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("turma")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("ProfesTurmCurso");
+                });
+
+            modelBuilder.Entity("NovoProjetoCrianca.Models.Curso", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -238,7 +237,7 @@ namespace NovoProjetoCrianca.Migrations
                     b.ToTable("Cursos");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.DadoFamilia", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.DadoFamilia", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -297,7 +296,7 @@ namespace NovoProjetoCrianca.Migrations
                     b.ToTable("DadosFamilias");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.Encaminhamento", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.Encaminhamento", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -333,7 +332,7 @@ namespace NovoProjetoCrianca.Migrations
                     b.ToTable("Encaminhamentos");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.Entidade", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.Entidade", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -365,7 +364,7 @@ namespace NovoProjetoCrianca.Migrations
                     b.ToTable("Entidades");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.Materia", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.Materia", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -388,7 +387,7 @@ namespace NovoProjetoCrianca.Migrations
                     b.ToTable("Materias");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.Matricula", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.Matricula", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -417,7 +416,7 @@ namespace NovoProjetoCrianca.Migrations
                     b.ToTable("Matriculas");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.PerfilSocioEconomico", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.PerfilSocioEconomico", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -453,7 +452,7 @@ namespace NovoProjetoCrianca.Migrations
                     b.ToTable("PerfisSociosEconomicos");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.Professor", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.Professor", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -491,7 +490,7 @@ namespace NovoProjetoCrianca.Migrations
                     b.ToTable("Professores");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.Turma", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.Turma", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -523,7 +522,7 @@ namespace NovoProjetoCrianca.Migrations
                     b.ToTable("Turmas");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.Visita", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.Visita", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -554,9 +553,9 @@ namespace NovoProjetoCrianca.Migrations
                     b.ToTable("Visitas");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.Aluno", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.Aluno", b =>
                 {
-                    b.HasOne("ProjetoFundacaoCrianca.Models.DadoFamilia", "dadofamilia")
+                    b.HasOne("NovoProjetoCrianca.Models.DadoFamilia", "dadofamilia")
                         .WithMany()
                         .HasForeignKey("dadofamiliaID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -565,15 +564,15 @@ namespace NovoProjetoCrianca.Migrations
                     b.Navigation("dadofamilia");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.Atendimento", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.Atendimento", b =>
                 {
-                    b.HasOne("ProjetoFundacaoCrianca.Models.AssistenteSocial", "assistenteSocial")
+                    b.HasOne("NovoProjetoCrianca.Models.AssistenteSocial", "assistenteSocial")
                         .WithMany()
                         .HasForeignKey("assistenteSocialID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ProjetoFundacaoCrianca.Models.DadoFamilia", "dadofamilia")
+                    b.HasOne("NovoProjetoCrianca.Models.DadoFamilia", "dadofamilia")
                         .WithMany()
                         .HasForeignKey("dadofamiliaID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -584,9 +583,9 @@ namespace NovoProjetoCrianca.Migrations
                     b.Navigation("dadofamilia");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.Chamada", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.Chamada", b =>
                 {
-                    b.HasOne("ProjetoFundacaoCrianca.Models.Matricula", "matricula")
+                    b.HasOne("NovoProjetoCrianca.Models.Matricula", "matricula")
                         .WithMany()
                         .HasForeignKey("matriculaID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -595,21 +594,21 @@ namespace NovoProjetoCrianca.Migrations
                     b.Navigation("matricula");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.Encaminhamento", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.Encaminhamento", b =>
                 {
-                    b.HasOne("ProjetoFundacaoCrianca.Models.Aluno", "aluno")
+                    b.HasOne("NovoProjetoCrianca.Models.Aluno", "aluno")
                         .WithMany()
                         .HasForeignKey("alunoID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ProjetoFundacaoCrianca.Models.AssistenteSocial", "assistentesocial")
+                    b.HasOne("NovoProjetoCrianca.Models.AssistenteSocial", "assistentesocial")
                         .WithMany()
                         .HasForeignKey("assistentesocialID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ProjetoFundacaoCrianca.Models.Entidade", "entidade")
+                    b.HasOne("NovoProjetoCrianca.Models.Entidade", "entidade")
                         .WithMany()
                         .HasForeignKey("entidadeID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -622,9 +621,9 @@ namespace NovoProjetoCrianca.Migrations
                     b.Navigation("entidade");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.Materia", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.Materia", b =>
                 {
-                    b.HasOne("ProjetoFundacaoCrianca.Models.Curso", "curso")
+                    b.HasOne("NovoProjetoCrianca.Models.Curso", "curso")
                         .WithMany()
                         .HasForeignKey("CursoID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -633,15 +632,15 @@ namespace NovoProjetoCrianca.Migrations
                     b.Navigation("curso");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.Matricula", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.Matricula", b =>
                 {
-                    b.HasOne("ProjetoFundacaoCrianca.Models.Aluno", "aluno")
+                    b.HasOne("NovoProjetoCrianca.Models.Aluno", "aluno")
                         .WithMany()
                         .HasForeignKey("alunoID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ProjetoFundacaoCrianca.Models.Turma", "turma")
+                    b.HasOne("NovoProjetoCrianca.Models.Turma", "turma")
                         .WithMany()
                         .HasForeignKey("turmaID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -652,9 +651,9 @@ namespace NovoProjetoCrianca.Migrations
                     b.Navigation("turma");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.PerfilSocioEconomico", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.PerfilSocioEconomico", b =>
                 {
-                    b.HasOne("ProjetoFundacaoCrianca.Models.DadoFamilia", "dadofamilia")
+                    b.HasOne("NovoProjetoCrianca.Models.DadoFamilia", "dadofamilia")
                         .WithMany()
                         .HasForeignKey("dadofamiliaID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -663,9 +662,9 @@ namespace NovoProjetoCrianca.Migrations
                     b.Navigation("dadofamilia");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.Professor", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.Professor", b =>
                 {
-                    b.HasOne("ProjetoFundacaoCrianca.Models.Turma", "turma")
+                    b.HasOne("NovoProjetoCrianca.Models.Turma", "turma")
                         .WithMany()
                         .HasForeignKey("turmaID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -674,9 +673,9 @@ namespace NovoProjetoCrianca.Migrations
                     b.Navigation("turma");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.Turma", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.Turma", b =>
                 {
-                    b.HasOne("ProjetoFundacaoCrianca.Models.Curso", "curso")
+                    b.HasOne("NovoProjetoCrianca.Models.Curso", "curso")
                         .WithMany()
                         .HasForeignKey("cursoID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -685,15 +684,15 @@ namespace NovoProjetoCrianca.Migrations
                     b.Navigation("curso");
                 });
 
-            modelBuilder.Entity("ProjetoFundacaoCrianca.Models.Visita", b =>
+            modelBuilder.Entity("NovoProjetoCrianca.Models.Visita", b =>
                 {
-                    b.HasOne("ProjetoFundacaoCrianca.Models.AssistenteSocial", "assistenteSocial")
+                    b.HasOne("NovoProjetoCrianca.Models.AssistenteSocial", "assistenteSocial")
                         .WithMany()
                         .HasForeignKey("assistenteSocialID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ProjetoFundacaoCrianca.Models.DadoFamilia", "dadofamilia")
+                    b.HasOne("NovoProjetoCrianca.Models.DadoFamilia", "dadofamilia")
                         .WithMany()
                         .HasForeignKey("dadofamiliaID")
                         .OnDelete(DeleteBehavior.Cascade)

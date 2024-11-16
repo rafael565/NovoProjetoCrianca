@@ -2,8 +2,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using NovoProjetoCrianca.Data;
 using NovoProjetoCrianca.Models;
+using System.Reflection.Emit;
 
 var builder = WebApplication.CreateBuilder(args);
+
 
 builder.Services.AddDbContext<Contexto>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("conexao")));
