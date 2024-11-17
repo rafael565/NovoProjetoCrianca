@@ -34,7 +34,8 @@ namespace NovoProjetoCrianca.Controllers
             {
                 Aluno aluno = new Aluno();
 
-                aluno.dadofamiliaID = randNum.Next(1, _context.DadosFamilias.Count() + 1);
+                int totalFamilias = _context.DadosFamilias.Count();
+                aluno.dadofamiliaID = randNum.Next(1, totalFamilias + 1);
                 aluno.nome = (i % 2 == 0) ? vNomeMas[i / 2] : vNomeFem[i / 2];
                 Int64 Ncpf = randNum.NextInt64(11111111111, 99999999999);
                 aluno.cpf = string.Join("", Ncpf);

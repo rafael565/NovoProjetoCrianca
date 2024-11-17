@@ -1,11 +1,11 @@
-﻿@model IEnumerable<NovoProjetoCrianca.Models.Aluno>
+﻿@model IEnumerable<NovoProjetoCrianca.Models.Professor>
 
 @{
-    ViewData["Title"] = "Aluno";
+    ViewData["Title"] = "Professor";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Aluno</h1>
+<h1>Professor</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -14,25 +14,19 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.dadofamilia)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.nome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.cpf)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.genero)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.escolaridade)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DatadeNascimento)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.especializacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.turma)
             </th>
             <th></th>
         </tr>
@@ -41,25 +35,19 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.dadofamilia.email)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.cpf)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.genero)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.escolaridade)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DatadeNascimento)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.especializacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.turma.nomeTurma)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |

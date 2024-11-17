@@ -1,11 +1,11 @@
-﻿@model IEnumerable<NovoProjetoCrianca.Models.Aluno>
+﻿@model IEnumerable<NovoProjetoCrianca.Models.PerfilSocioEconomico>
 
 @{
-    ViewData["Title"] = "Aluno";
+    ViewData["Title"] = "PerfilSocioEconomico";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Aluno</h1>
+<h1>PerfilSocioEconomico</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -17,22 +17,16 @@
                 @Html.DisplayNameFor(model => model.dadofamilia)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.nome)
+                @Html.DisplayNameFor(model => model.rendafamilia)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.cpf)
+                @Html.DisplayNameFor(model => model.situacaofamilia)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.genero)
+                @Html.DisplayNameFor(model => model.profissaoPai)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.escolaridade)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DatadeNascimento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.email)
+                @Html.DisplayNameFor(model => model.profissaoMae)
             </th>
             <th></th>
         </tr>
@@ -44,22 +38,16 @@
                 @Html.DisplayFor(modelItem => item.dadofamilia.email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.nome)
+                @Html.DisplayFor(modelItem => item.rendafamilia)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.cpf)
+                @Html.DisplayFor(modelItem => item.situacaofamilia)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.genero)
+                @Html.DisplayFor(modelItem => item.profissaoPai)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.escolaridade)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DatadeNascimento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.email)
+                @Html.DisplayFor(modelItem => item.profissaoMae)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
