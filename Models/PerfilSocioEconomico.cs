@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using NovoProjetoCrianca.Enum;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NovoProjetoCrianca.Models
@@ -21,7 +22,7 @@ namespace NovoProjetoCrianca.Models
 
         [Required(ErrorMessage = "Campo situação da familia é obrigatório")]
         [StringLength(100)]
-        public string situacaofamilia { get; set; }
+        public Situacao situacaofamilia { get; set; }
 
         [Required(ErrorMessage = "Campo Profissão do pai é obrigatório")]
         [StringLength(35)]

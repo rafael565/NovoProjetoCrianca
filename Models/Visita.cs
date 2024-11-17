@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using NovoProjetoCrianca.Enum;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NovoProjetoCrianca.Models
@@ -20,11 +21,11 @@ namespace NovoProjetoCrianca.Models
         public int dadofamiliaID { get; set; }
 
         [Display(Name = "Data do Atendimento : ")]
-        public DateTime DataAtendimento { get; set; }
+        public DateOnly DataAtendimento { get; set; }
 
         [Required(ErrorMessage = "Campo observação é obrigatório")]
         [StringLength(50)]
         [Display(Name = "Observação: ")]
-        public string observacao { get; set; }
+        public Obs observacao { get; set; }
     }
 }

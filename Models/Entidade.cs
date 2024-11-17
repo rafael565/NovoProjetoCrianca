@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using NovoProjetoCrianca.Enum;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NovoProjetoCrianca.Models
@@ -23,14 +24,14 @@ namespace NovoProjetoCrianca.Models
         [Required(ErrorMessage = "Campo Status Contrato é obrigatório")]
 
         [Display(Name = "Status do Contrato: ")]
-        public int statusContrato { get; set; }
+        public Status statusContrato { get; set; }
 
 
         [Display(Name = "Data de Inicio: ")]
-        public DateTime DatadeInicio { get; set; }
+        public DateOnly DatadeInicio { get; set; }
 
         [Display(Name = "Data de Fim: ")]
-        public DateTime DatadoFim { get; set; }
+        public DateOnly DatadoFim { get; set; }
 
 
     }

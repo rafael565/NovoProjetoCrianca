@@ -1,11 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using NovoProjetoCrianca.Enum;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NovoProjetoCrianca.Models
 {
     [Table("Atividades")]
     public class Atividade
-    {//Testando
+    {
         [Display(Name = "ID: ")]
         public int id { get; set; }
 
@@ -17,12 +18,10 @@ namespace NovoProjetoCrianca.Models
         [Required(ErrorMessage = "Campo Descrição é obrigatório")]
         [StringLength(35)]
         [Display(Name = "Descrição: ")]
-        public string descricao { get; set; }
-
-   
+        public Descricao descricao { get; set; }
 
         [Display(Name = "Data Atividade: ")]
-        public DateTime DataAtividade { get; set; }
+        public DateOnly DataAtividade { get; set; }
 
         [Required(ErrorMessage = "Campo Horario de duração é obrigatório")]
         [StringLength(35)]

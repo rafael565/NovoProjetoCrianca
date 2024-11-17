@@ -5,12 +5,12 @@ namespace NovoProjetoCrianca.Enum
     public enum Periodo
     {
         [Display(Name = "Manha")]
-        Manha = 1,
+        Manha = 0,
 
         [Display(Name = "Tarde")]
-        Tarde = 2,
+        Tarde = 1,
 
         [Display(Name = "Noite")]
-        Noite = 3
+        Noite = 2
     }
 }

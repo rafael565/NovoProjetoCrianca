@@ -5,10 +5,10 @@ namespace NovoProjetoCrianca.Enum
     public enum Genero
     {
         [Display(Name = "Masculino")]
-        Masculino = 1,
+        Masculino = 0,
 
         [Display(Name = "Feminino")]
-        Feminino = 2,
+        Feminino = 1,
 
     }
 }

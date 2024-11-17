@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using NovoProjetoCrianca.Enum;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NovoProjetoCrianca.Models
@@ -18,12 +19,12 @@ namespace NovoProjetoCrianca.Models
         public int alunoID { get; set; }
 
         [Display(Name = "Data da Matricula : ")]
-        public DateTime DataMatricula { get; set; }
+        public DateOnly DataMatricula { get; set; }
 
         [Required(ErrorMessage = "Campo Status da Matricula é obrigatório")]
 
         [Display(Name = "Status da matricula: ")]
-        public int statusMatricula { get; set; }
+        public Status statusMatricula { get; set; }
 
 
 

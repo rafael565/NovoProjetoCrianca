@@ -20,7 +20,7 @@ namespace NovoProjetoCrianca.Models
 
         [Required(ErrorMessage = "Campo descrição é obrigatório")]
         [StringLength(35)]
-        public string descricao { get; set; }
+        public Desc_curso descricao { get; set; }
 
         [Display(Name = "Período: ")]
         public Periodo periodo { get; set; }

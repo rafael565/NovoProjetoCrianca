@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using NovoProjetoCrianca.Enum;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NovoProjetoCrianca.Models
@@ -15,7 +16,7 @@ namespace NovoProjetoCrianca.Models
         public string nomeMae { get; set; }
 
         [Display(Name = "Data de Nascimento Mãe: ")]
-        public DateTime DatadeNascimentoMae { get; set; }
+        public DateOnly DatadeNascimentoMae { get; set; }
 
         [Required(ErrorMessage = "Campo Telefone da mae é obrigatório")]
         [StringLength(35)]
@@ -29,7 +30,7 @@ namespace NovoProjetoCrianca.Models
         public string nomePai { get; set; }
 
         [Display(Name = "Data de Nascimento Pai: ")]
-        public DateTime DatadeNascimentoPai { get; set; }
+        public DateOnly DatadeNascimentoPai { get; set; }
 
         [Required(ErrorMessage = "Campo Telefone da pai é obrigatório")]
         [StringLength(35)]
@@ -41,7 +42,7 @@ namespace NovoProjetoCrianca.Models
         [StringLength(50)]
         [Display(Name = "Historico Familiar : ")]
 
-        public string HistoricoFamiliar { get; set; }
+        public HistoricoFamiliar HistoricoFamiliar { get; set; }
 
          [Required(ErrorMessage = "Campo Endereço é obrigatório")]
         [StringLength(50)]
@@ -52,7 +53,7 @@ namespace NovoProjetoCrianca.Models
         [Required(ErrorMessage = "Campo cidade é obrigatório")]
         [StringLength(50)]
         [Display(Name = "cidade : ")]
-        public string cidade { get; set; }
+        public Cidade cidade { get; set; }
 
         [Required(ErrorMessage = "Campo email é obrigatório")]
         [StringLength(50)]

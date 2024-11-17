@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using NovoProjetoCrianca.Enum;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NovoProjetoCrianca.Models
@@ -24,10 +25,10 @@ namespace NovoProjetoCrianca.Models
         [Required(ErrorMessage = "Campo Motivo é obrigatório")]
         [StringLength(50)]
         [Display(Name = "Motivo: ")]
-        public string motivo { get; set; }
+        public Motivo motivo { get; set; }
 
         [Display(Name = "Data do Encaminhamento: ")]
-        public DateTime DatadeEncaminhamento { get; set; }
+        public DateOnly DatadeEncaminhamento { get; set; }
 
 
 

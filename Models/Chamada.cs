@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using NovoProjetoCrianca.Enum;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NovoProjetoCrianca.Models
@@ -15,12 +16,12 @@ namespace NovoProjetoCrianca.Models
 
 
         [Display(Name = "Data de Chamada: ")]
-        public DateTime DatadeChamada { get; set; }
+        public DateOnly DatadeChamada { get; set; }
 
         [Required(ErrorMessage = "Campo Presença é obrigatório")]
         [StringLength(3)]
         [Display(Name = "Presença: ")]
-        public string Presenca { get; set; }
+        public Presenca Presenca { get; set; }
         
 
     }
