@@ -77,12 +77,12 @@ namespace NovoProjetoCrianca.Controllers
                 int ano = randNum.Next(1960, 2000 + 1);
                 int mes = randNum.Next(1, 13);
                 int dia = randNum.Next(1, 31);
-                DateOnly dataNascimentomae = new DateOnly(ano, mes, dia);
+                DateTime dataNascimentomae = new DateTime(ano, mes, dia);
                 dadosfamilia.DatadeNascimentoMae = dataNascimentomae;
                 int ano_pai = randNum.Next(1960, 2000 + 1);
                 int mes_pai = randNum.Next(1, 13);
                 int dia_pai = randNum.Next(1, 31);
-                DateOnly dataNascimentopai = new DateOnly(ano_pai, mes_pai, dia_pai);
+                DateTime dataNascimentopai = new DateTime(ano_pai, mes_pai, dia_pai);
                 dadosfamilia.DatadeNascimentoPai = dataNascimentopai;
                 Int64 NMae = randNum.NextInt64(11111111111, 99999999999);
                 dadosfamilia.telefoneMae = string.Join("", NMae);

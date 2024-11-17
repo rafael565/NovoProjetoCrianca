@@ -49,8 +49,6 @@ namespace NovoProjetoCrianca.Controllers
         }
 
         // POST: DadosFamilias/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,nomeMae,DatadeNascimentoMae,telefoneMae,nomePai,DatadeNascimentoPai,telefonePai,HistoricoFamiliar,endereco,cidade,email")] DadoFamilia dadoFamilia)
@@ -81,8 +79,6 @@ namespace NovoProjetoCrianca.Controllers
         }
 
         // POST: DadosFamilias/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("id,nomeMae,DatadeNascimentoMae,telefoneMae,nomePai,DatadeNascimentoPai,telefonePai,HistoricoFamiliar,endereco,cidade,email")] DadoFamilia dadoFamilia)

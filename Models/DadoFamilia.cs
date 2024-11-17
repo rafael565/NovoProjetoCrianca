@@ -16,7 +16,7 @@ namespace NovoProjetoCrianca.Models
         public string nomeMae { get; set; }
 
         [Display(Name = "Data de Nascimento Mãe: ")]
-        public DateOnly DatadeNascimentoMae { get; set; }
+        public DateTime DatadeNascimentoMae { get; set; }
 
         [Required(ErrorMessage = "Campo Telefone da mae é obrigatório")]
         [StringLength(35)]
@@ -30,7 +30,7 @@ namespace NovoProjetoCrianca.Models
         public string nomePai { get; set; }
 
         [Display(Name = "Data de Nascimento Pai: ")]
-        public DateOnly DatadeNascimentoPai { get; set; }
+        public DateTime DatadeNascimentoPai { get; set; }
 
         [Required(ErrorMessage = "Campo Telefone da pai é obrigatório")]
         [StringLength(35)]
