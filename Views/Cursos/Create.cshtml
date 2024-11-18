@@ -5,30 +5,26 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create Course</h1>
+<h1>Create</h1>
 
 <h4>Curso</h4>
 <hr />
 <div class="row">
-    <div class="col-md-6 offset-md-3">
+    <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-          
             <div class="form-group">
-                <label asp-for="nome" class="control-label">Nome do Curso</label>
-                <input asp-for="nome" class="form-control" placeholder="Digite o nome do curso" />
+                <label asp-for="nome" class="control-label"></label>
+                <input asp-for="nome" class="form-control" />
                 <span asp-validation-for="nome" class="text-danger"></span>
             </div>
-
-            
             <div class="form-group">
-                <label asp-for="descricao" class="control-label">Descrição do Curso</label>
-                <textarea asp-for="descricao" class="form-control" rows="4" placeholder="Descreva o curso"></textarea>
+                <label asp-for="descricao" class="control-label">Descrição</label>
+                <select asp-for="descricao" class="form-control" asp-items="Html.GetEnumSelectList<NovoProjetoCrianca.Enum.Desc_curso>()">
+                    <option value="">Selecione a Descrição</option>
+                </select>
                 <span asp-validation-for="descricao" class="text-danger"></span>
             </div>
-
-         
             <div class="form-group">
                 <label asp-for="periodo" class="control-label">Período</label>
                 <select asp-for="periodo" class="form-control" asp-items="Html.GetEnumSelectList<NovoProjetoCrianca.Enum.Periodo>()">
@@ -36,28 +32,22 @@
                 </select>
                 <span asp-validation-for="periodo" class="text-danger"></span>
             </div>
-
-          
             <div class="form-group">
-                <label asp-for="CargaHoraria" class="control-label">Carga Horária</label>
-                <input asp-for="CargaHoraria" class="form-control" placeholder="Informe a carga horária" />
+                <label asp-for="CargaHoraria" class="control-label"></label>
+                <input asp-for="CargaHoraria" class="form-control" />
                 <span asp-validation-for="CargaHoraria" class="text-danger"></span>
             </div>
-
-     
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary btn-block" />
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div class="text-center mt-3">
-    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+<div>
+    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

@@ -11,6 +11,6 @@ namespace NovoProjetoCrianca.Enum
         Tarde = 1,
 
         [Display(Name = "Noite")]
-        Noite = 2
+        Noite = 2,
     }
 }

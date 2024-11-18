@@ -1,10 +1,10 @@
-﻿using NovoProjetoCrianca.Enum;
+﻿﻿using NovoProjetoCrianca.Enum;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NovoProjetoCrianca.Models
 {
-
+   
     [Table("Cursos")]
     public class Curso
     {
@@ -19,7 +19,7 @@ namespace NovoProjetoCrianca.Models
 
 
         [Required(ErrorMessage = "Campo descrição é obrigatório")]
-        
+       
         public Desc_curso descricao { get; set; }
 
         [Display(Name = "Período: ")]
