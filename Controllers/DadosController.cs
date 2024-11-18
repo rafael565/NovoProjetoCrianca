@@ -42,9 +42,9 @@ namespace NovoProjetoCrianca.Controllers
                 aluno.genero = (Genero)randNum.Next(2);
                 aluno.escolaridade = (Escolaridade)randNum.Next(2);
                 int ano = randNum.Next(2005, 2024 + 1);
-                int mes = randNum.Next(1, 13);
+                int mes = randNum.Next(1, 12);
                 int dia = randNum.Next(1, 31);
-                DateOnly dataNascimento = new DateOnly(ano, mes, dia);
+                DateTime dataNascimento = new DateTime(ano, mes, dia);
                 aluno.DatadeNascimento = dataNascimento;
                 aluno.email = aluno.nome.ToLower() + "@gmail.com.br";
                 _context.Alunos.Add(aluno);
@@ -75,12 +75,12 @@ namespace NovoProjetoCrianca.Controllers
                 int indice_nomepai = randNum.Next(1, 50);
                 dadosfamilia.nomePai = vNomeMae[indice_nomepai];
                 int ano = randNum.Next(1960, 2000 + 1);
-                int mes = randNum.Next(1, 13);
+                int mes = randNum.Next(1, 12);
                 int dia = randNum.Next(1, 31);
                 DateTime dataNascimentomae = new DateTime(ano, mes, dia);
                 dadosfamilia.DatadeNascimentoMae = dataNascimentomae;
                 int ano_pai = randNum.Next(1960, 2000 + 1);
-                int mes_pai = randNum.Next(1, 13);
+                int mes_pai = randNum.Next(1, 12);
                 int dia_pai = randNum.Next(1, 31);
                 DateTime dataNascimentopai = new DateTime(ano_pai, mes_pai, dia_pai);
                 dadosfamilia.DatadeNascimentoPai = dataNascimentopai;
@@ -144,7 +144,7 @@ namespace NovoProjetoCrianca.Controllers
                 atendimento.assistenteSocialID = randNum.Next(1, _context.AssistentesSociais.Count() + 1);
                 atendimento.dadofamiliaID = randNum.Next(1, _context.DadosFamilias.Count() + 1);
                 int ano = randNum.Next(2005, 2024 + 1);
-                int mes = randNum.Next(1, 13);
+                int mes = randNum.Next(1, 12);
                 int dia = randNum.Next(1, 31);
                 DateOnly dataAtendimento = new DateOnly(ano, mes, dia);
                 atendimento.DataAtendimento = dataAtendimento;
@@ -174,9 +174,9 @@ namespace NovoProjetoCrianca.Controllers
                 atividade.nome = atividades_escolares[indice_atv];
                 atividade.descricao = (Descricao)randNum.Next(2);
                 int ano = randNum.Next(2005, 2024 + 1);
-                int mes = randNum.Next(1, 13);
+                int mes = randNum.Next(1, 12);
                 int dia = randNum.Next(1, 31);
-                DateOnly dataAtv = new DateOnly(ano, mes, dia);
+                DateTime dataAtv = new DateTime(ano, mes, dia);
                 atividade.DataAtividade = dataAtv;
                 int tempo = randNum.Next(1, 4);
                 atividade.duracaoAtividade = string.Join(" ", tempo) + "Horas";
@@ -201,9 +201,9 @@ namespace NovoProjetoCrianca.Controllers
 
                 chamada.matriculaID = randNum.Next(1, _context.Matriculas.Count() + 1);
                 int ano = randNum.Next(2005, 2024 + 1);
-                int mes = randNum.Next(1, 13);
+                int mes = randNum.Next(1, 12);
                 int dia = randNum.Next(1, 31);
-                DateOnly dataChamada = new DateOnly(ano, mes, dia);
+                DateTime dataChamada = new DateTime(ano, mes, dia);
                 chamada.DatadeChamada = dataChamada;
                 chamada.Presenca = (Presenca)randNum.Next(2);
                 _context.Chamadas.Add(chamada);
@@ -256,9 +256,9 @@ namespace NovoProjetoCrianca.Controllers
                 encaminhamento.assistentesocialID = randNum.Next(1, _context.AssistentesSociais.Count() + 1);
                 encaminhamento.alunoID = randNum.Next(1, _context.Alunos.Count() + 1);
                 int ano = randNum.Next(2005, 2024 + 1);
-                int mes = randNum.Next(1, 13);
+                int mes = randNum.Next(1, 12);
                 int dia = randNum.Next(1, 31);
-                DateOnly dataEncaminhamento = new DateOnly(ano, mes, dia);
+                DateTime dataEncaminhamento = new DateTime(ano, mes, dia);
                 encaminhamento.DatadeEncaminhamento = dataEncaminhamento;
                 encaminhamento.motivo = (Motivo)randNum.Next(2);
                 _context.Encaminhamentos.Add(encaminhamento);
@@ -287,12 +287,12 @@ namespace NovoProjetoCrianca.Controllers
                 entidade.endereco = nomes_ruas[i] + ", Numero " + randNum.Next(20, 320);
                 entidade.statusContrato = (Status)randNum.Next(2);
                 int ano = randNum.Next(2005, 2024 + 1);
-                int mes = randNum.Next(1, 13);
+                int mes = randNum.Next(1, 12);
                 int dia = randNum.Next(1, 31);
                 DateOnly datainicio = new DateOnly(ano, mes, dia);
                 entidade.DatadeInicio = datainicio;
                 int ano_fim = randNum.Next(2005, 2024 + 1);
-                int mes_fim = randNum.Next(1, 13);
+                int mes_fim = randNum.Next(1, 12);
                 int dia_fim = randNum.Next(1, 31);
                 DateOnly datafim = new DateOnly(ano_fim, mes_fim, dia_fim);
                 entidade.DatadoFim = datafim;
@@ -342,9 +342,9 @@ namespace NovoProjetoCrianca.Controllers
                 matricula.turmaID = randNum.Next(1, _context.Turmas.Count() + 1);
                 matricula.alunoID = randNum.Next(1, _context.Alunos.Count() + 1);
                 int ano = randNum.Next(2005, 2024 + 1);
-                int mes = randNum.Next(1, 13);
+                int mes = randNum.Next(1, 12);
                 int dia = randNum.Next(1, 31);
-                DateOnly datamatricula = new DateOnly(ano, mes, dia);
+                DateTime datamatricula = new DateTime(ano, mes, dia);
                 matricula.DataMatricula = datamatricula;
                 matricula.statusMatricula = (Status)randNum.Next(2);
                 _context.Matriculas.Add(matricula);
@@ -457,7 +457,7 @@ namespace NovoProjetoCrianca.Controllers
                 visita.assistenteSocialID = randNum.Next(1, _context.AssistentesSociais.Count() + 1);
                 visita.dadofamiliaID = randNum.Next(1, _context.DadosFamilias.Count() + 1);
                 int ano = randNum.Next(2005, 2024 + 1);
-                int mes = randNum.Next(1, 13);
+                int mes = randNum.Next(1, 12);
                 int dia = randNum.Next(1, 31);
                 DateOnly dataAtendimento = new DateOnly(ano, mes, dia);
                 visita.DataAtendimento = dataAtendimento;

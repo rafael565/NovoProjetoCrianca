@@ -28,7 +28,7 @@ namespace NovoProjetoCrianca.Models
         public Motivo motivo { get; set; }
 
         [Display(Name = "Data do Encaminhamento: ")]
-        public DateOnly DatadeEncaminhamento { get; set; }
+        public DateTime DatadeEncaminhamento { get; set; }
 
 
 

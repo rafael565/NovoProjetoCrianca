@@ -87,7 +87,7 @@ namespace NovoProjetoCrianca.Migrations
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    nomeEntidade = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: false),
+                    nomeEntidade = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     endereco = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     statusContrato = table.Column<int>(type: "int", nullable: false),
                     DatadeInicio = table.Column<DateTime>(type: "datetime2", nullable: false),

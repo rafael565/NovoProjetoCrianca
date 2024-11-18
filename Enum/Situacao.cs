@@ -11,7 +11,7 @@ namespace NovoProjetoCrianca.Enum
         Pobreza = 1,
 
         [Display(Name = "Media Baixa")]
-        MediaBaixa = 1,
+        MediaBaixa = 2,
 
     }
 }

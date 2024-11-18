@@ -16,7 +16,7 @@ namespace NovoProjetoCrianca.Models
 
 
         [Display(Name = "Data de Chamada: ")]
-        public DateOnly DatadeChamada { get; set; }
+        public DateTime DatadeChamada { get; set; }
 
         [Required(ErrorMessage = "Campo Presença é obrigatório")]
         [StringLength(3)]

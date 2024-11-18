@@ -19,7 +19,7 @@ namespace NovoProjetoCrianca.Models
         public int alunoID { get; set; }
 
         [Display(Name = "Data da Matricula : ")]
-        public DateOnly DataMatricula { get; set; }
+        public DateTime DataMatricula { get; set; }
 
         [Required(ErrorMessage = "Campo Status da Matricula é obrigatório")]
 

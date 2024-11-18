@@ -30,7 +30,7 @@ namespace NovoProjetoCrianca.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
-                    b.Property<DateOnly>("DatadeNascimento")
+                    b.Property<DateTime>("DatadeNascimento")
                         .HasColumnType("date");
 
                     b.Property<string>("cpf")
@@ -135,7 +135,7 @@ namespace NovoProjetoCrianca.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
-                    b.Property<DateOnly>("DataAtividade")
+                    b.Property<DateTime>("DataAtividade")
                         .HasColumnType("date");
 
                     b.Property<int>("descricao")
@@ -165,7 +165,7 @@ namespace NovoProjetoCrianca.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
-                    b.Property<DateOnly>("DatadeChamada")
+                    b.Property<DateTime>("DatadeChamada")
                         .HasColumnType("date");
 
                     b.Property<int>("Presenca")
@@ -298,7 +298,7 @@ namespace NovoProjetoCrianca.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
-                    b.Property<DateOnly>("DatadeEncaminhamento")
+                    b.Property<DateTime>("DatadeEncaminhamento")
                         .HasColumnType("date");
 
                     b.Property<int>("alunoID")
@@ -347,7 +347,7 @@ namespace NovoProjetoCrianca.Migrations
                     b.Property<string>("nomeEntidade")
                         .IsRequired()
                         .HasMaxLength(35)
-                        .HasColumnType("nvarchar(35)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("statusContrato")
                         .HasColumnType("int");
@@ -388,7 +388,7 @@ namespace NovoProjetoCrianca.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
-                    b.Property<DateOnly>("DataMatricula")
+                    b.Property<DateTime>("DataMatricula")
                         .HasColumnType("date");
 
                     b.Property<int>("alunoID")

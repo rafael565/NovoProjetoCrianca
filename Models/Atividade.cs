@@ -21,7 +21,7 @@ namespace NovoProjetoCrianca.Models
         public Descricao descricao { get; set; }
 
         [Display(Name = "Data Atividade: ")]
-        public DateOnly DataAtividade { get; set; }
+        public DateTime DataAtividade { get; set; }
 
         [Required(ErrorMessage = "Campo Horario de duração é obrigatório")]
         [StringLength(35)]
