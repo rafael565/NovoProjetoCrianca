@@ -2,9 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 using NovoProjetoCrianca.Models.Consultas;
 using NovoProjetoCrianca.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace NovoProjetoCrianca.Controllers
 {
+    [Authorize(Roles = "ADMIN, SUPERVISOR")]
     public class ConsultasController : Controller
     {
         private readonly Contexto contexto;

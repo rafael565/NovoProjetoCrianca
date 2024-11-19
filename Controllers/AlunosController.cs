@@ -11,7 +11,7 @@ using NovoProjetoCrianca.Models;
 
 namespace NovoProjetoCrianca.Controllers
 {
-    
+    [Authorize(Roles = "ADMIN, SUPERVISOR")]
     public class AlunosController : Controller
     {
         private readonly Contexto _context;

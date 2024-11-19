@@ -10,6 +10,8 @@ using NovoProjetoCrianca.Models;
 
 namespace NovoProjetoCrianca.Controllers
 {
+
+    [Authorize(Roles = "ADMIN, ATENDIMENTO")]
     public class AssistentesSociaisController : Controller
     {
         private readonly Contexto _context;
