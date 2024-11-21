@@ -42,8 +42,8 @@ namespace NovoProjetoCrianca.Controllers
                 aluno.genero = (Genero)randNum.Next(2);
                 aluno.escolaridade = (Escolaridade)randNum.Next(2);
                 int ano = randNum.Next(2005, 2024 + 1);
-                int mes = randNum.Next(1, 12);
-                int dia = randNum.Next(1, 31);
+                int mes = randNum.Next(1, 13);
+                int dia = randNum.Next(1, DateTime.DaysInMonth(ano, mes) + 1);
                 DateTime dataNascimento = new DateTime(ano, mes, dia);
                 aluno.DatadeNascimento = dataNascimento;
                 aluno.email = aluno.nome.ToLower() + "@gmail.com.br";
@@ -52,7 +52,7 @@ namespace NovoProjetoCrianca.Controllers
 
             _context.SaveChanges();
 
-            return View(_context.Alunos.OrderBy(o => o.id).ToList());
+            return View(_context.Alunos.OrderBy(o => o.nome).ToList());
         }
 
         public IActionResult DadosFamilia()
@@ -172,10 +172,10 @@ namespace NovoProjetoCrianca.Controllers
 
                 int indice_atv = randNum.Next(1, 20);
                 atividade.nome = atividades_escolares[indice_atv];
-                atividade.descricao = (Descricao)randNum.Next(2);
+                atividade.descricao = randNum.Next(2) != 0;
                 int ano = randNum.Next(2005, 2024 + 1);
-                int mes = randNum.Next(1, 12);
-                int dia = randNum.Next(1, 31);
+                int mes = randNum.Next(1, 13);
+                int dia = randNum.Next(1, DateTime.DaysInMonth(ano, mes) + 1);
                 DateTime dataAtv = new DateTime(ano, mes, dia);
                 atividade.DataAtividade = dataAtv;
                 int tempo = randNum.Next(1, 4);

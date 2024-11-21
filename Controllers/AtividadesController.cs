@@ -6,7 +6,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using NovoProjetoCrianca.Enum;
 using NovoProjetoCrianca.Models;
+
 
 namespace NovoProjetoCrianca.Controllers
 {
@@ -57,6 +59,7 @@ namespace NovoProjetoCrianca.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("id,nome,descricao,DataAtividade,duracaoAtividade")] Atividade atividade)
         {
+           
             if (ModelState.IsValid)
             {
                 _context.Add(atividade);

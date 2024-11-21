@@ -15,10 +15,9 @@ namespace NovoProjetoCrianca.Models
         [Display(Name = "Nome: ")]
         public string nome { get; set; }
 
-        [Required(ErrorMessage = "Campo Descrição é obrigatório")]
-        [StringLength(35)]
+        [Required(ErrorMessage = "Campo Descrição é obrigatório")]       
         [Display(Name = "Descrição: ")]
-        public Descricao descricao { get; set; }
+        public bool descricao { get; set; }
 
         [Display(Name = "Data Atividade: ")]
         public DateTime DataAtividade { get; set; }

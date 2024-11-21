@@ -24,7 +24,8 @@ namespace NovoProjetoCrianca.Controllers
         public async Task<IActionResult> Index()
         {
             var contexto = _context.Atendimentos.Include(a => a.assistenteSocial).Include(a => a.dadofamilia);
-            return View(await contexto.ToListAsync());
+            await contexto.ToListAsync();
+            return View();
         }
 
         // GET: Atendimentos/Details/5

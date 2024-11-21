@@ -24,8 +24,11 @@
 
                 
                 <div class="form-group">
-                    <label asp-for="descricao" class="control-label font-weight-bold">Descrição</label>
-                    <input asp-for="descricao" class="form-control" placeholder="Descrição detalhada" />
+                    <label asp-for="descricao" class="control-label font-weight-bold">Descrição</label>                    
+                    <select asp-for="descricao" class="form-control">
+                        <option value="true">Educativo</option>
+                        <option value="false">Diversão</option>
+                    </select>
                     <span asp-validation-for="descricao" class="text-danger"></span>
                 </div>
 

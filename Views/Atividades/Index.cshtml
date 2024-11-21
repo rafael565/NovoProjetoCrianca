@@ -35,7 +35,14 @@
                 @Html.DisplayFor(modelItem => item.nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.descricao)
+                    @if (item.descricao)
+                    {
+                        @:Educativo
+                    }
+                    else
+                    {
+                        @:Diversão
+                    }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DataAtividade)
