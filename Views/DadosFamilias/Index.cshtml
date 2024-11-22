@@ -68,7 +68,14 @@
                 @Html.DisplayFor(modelItem => item.telefonePai)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.HistoricoFamiliar)
+                    @if (item.HistoricoFamiliar)
+                    {
+                        @:Pobreza
+                    }
+                    else
+                    {
+                        @:Abandono
+                    }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.endereco)

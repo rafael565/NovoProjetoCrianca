@@ -39,10 +39,8 @@ namespace NovoProjetoCrianca.Models
 
 
         [Required(ErrorMessage = "Campo Historio Familiar é obrigatório")]
-        [StringLength(50)]
         [Display(Name = "Historico Familiar : ")]
-
-        public HistoricoFamiliar HistoricoFamiliar { get; set; }
+        public bool HistoricoFamiliar { get; set; }
 
          [Required(ErrorMessage = "Campo Endereço é obrigatório")]
         [StringLength(50)]
@@ -53,7 +51,7 @@ namespace NovoProjetoCrianca.Models
         [Required(ErrorMessage = "Campo cidade é obrigatório")]
         [StringLength(50)]
         [Display(Name = "cidade : ")]
-        public Cidade cidade { get; set; }
+        public string cidade { get; set; }
 
         [Required(ErrorMessage = "Campo email é obrigatório")]
         [StringLength(50)]

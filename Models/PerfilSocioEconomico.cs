@@ -14,8 +14,7 @@ namespace NovoProjetoCrianca.Models
         [Display(Name = "dadofamilia: ")]
         public int dadofamiliaID { get; set; }
 
-        [Required(ErrorMessage = "Campo Renda da Familia é obrigatório")]
-        
+        [Required(ErrorMessage = "Campo Renda da Familia é obrigatório")]    
         [Display(Name = "Renda da Familia : ")]
         public float rendafamilia { get; set; }
 

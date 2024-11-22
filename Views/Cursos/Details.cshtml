@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
+<h1>Detalhes</h1>
 
 <div>
     <h4>Curso</h4>
@@ -21,7 +21,14 @@
             @Html.DisplayNameFor(model => model.descricao)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.descricao)
+            @if (Model.descricao)
+            {
+                @:Bacharelado
+            }
+            else
+            {
+                @:Tecnologo
+            }
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.periodo)
@@ -37,7 +44,7 @@
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="text-center mt-3">
+    <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@Model?.id">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar a lista</a>
 </div>

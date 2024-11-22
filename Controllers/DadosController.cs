@@ -88,8 +88,26 @@ namespace NovoProjetoCrianca.Controllers
                 dadosfamilia.telefoneMae = string.Join("", NMae);
                 Int64 NPai = randNum.NextInt64(11111111111, 99999999999);
                 dadosfamilia.telefonePai = string.Join("", NPai);
-                dadosfamilia.cidade = (Cidade)randNum.Next(4);
-                dadosfamilia.HistoricoFamiliar = (HistoricoFamiliar)randNum.Next(2);
+                int randomValue = randNum.Next(3);
+
+                if (randomValue == 0)
+                {
+                    dadosfamilia.cidade = "Assis";
+                }
+                else if (randomValue == 1)
+                {
+                    dadosfamilia.cidade = "Candido Mota";
+                }
+                else if (randomValue == 2)
+                {
+                    dadosfamilia.cidade = "Palmital";
+                }
+                else
+                {
+                    dadosfamilia.cidade = "Paraguaçu";
+                }
+
+                dadosfamilia.HistoricoFamiliar = randNum.Next(2) != 0;
                 int indice_rua = randNum.Next(1, 20);
                 dadosfamilia.endereco = nomes_ruas[indice_rua] + ", Numero" + randNum.Next(1, 320);
                 dadosfamilia.email = dadosfamilia.nomeMae.ToLower() + "@gmail.com.br";
@@ -229,7 +247,7 @@ namespace NovoProjetoCrianca.Controllers
                 Curso curso = new Curso();
 
                 curso.nome = cursos[i];
-                curso.descricao = (Desc_curso)randNum.Next(2);
+                curso.descricao = randNum.Next(2) != 0;
                 curso.periodo = (Periodo)randNum.Next(2);
                 int tempo = randNum.Next(4, 6);
                 curso.CargaHoraria = string.Join(" ", tempo) + "Horas Aula por Dia";
@@ -466,9 +484,9 @@ namespace NovoProjetoCrianca.Controllers
 
                 visita.assistenteSocialID = randNum.Next(1, _context.AssistentesSociais.Count() + 1);
                 visita.dadofamiliaID = randNum.Next(1, _context.DadosFamilias.Count() + 1);
-                int ano = randNum.Next(2005, 2024 + 1);
-                int mes = randNum.Next(1, 12);
-                int dia = randNum.Next(1, 31);
+                int ano = randNum.Next(2005, 2025);
+                int mes = randNum.Next(1, 13);
+                int dia = randNum.Next(1, DateTime.DaysInMonth(ano, mes) + 1);
                 DateOnly dataAtendimento = new DateOnly(ano, mes, dia);
                 visita.DataAtendimento = dataAtendimento;
                 visita.observacao = randNum.Next(2) != 0;

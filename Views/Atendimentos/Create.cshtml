@@ -23,8 +23,12 @@
 
                 <!-- Família -->
                 <div class="form-group">
-                    <label asp-for="dadofamiliaID" class="control-label font-weight-bold">Família</label>
-                    <select asp-for="dadofamiliaID" class="form-control" asp-items="ViewBag.dadofamiliaID"></select>
+                    <label asp-for="dadofamiliaID" class="control-label"></label>
+                    <select asp-for="dadofamiliaID" class="form-control">
+                        <option value="0">Pobreza</option>
+                        <option value="1">Abandono</option>
+                    </select>
+                    <span asp-validation-for="dadofamiliaID" class="text-danger"></span>
                 </div>
 
                 <!-- Data do Atendimento -->
@@ -46,7 +50,7 @@
 
                 <!-- Botão de Enviar -->
                 <div class="form-group text-center">
-                    <input type="submit" value="Criar" class="btn btn-success btn-lg" />
+                    <input type="submit" value="Adicionar" class="btn btn-success btn-lg" />
                 </div>
             </form>
         </div>

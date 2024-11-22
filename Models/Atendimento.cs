@@ -22,7 +22,6 @@ namespace NovoProjetoCrianca.Models
         public DateOnly DataAtendimento { get; set; }
 
         [Required(ErrorMessage = "Campo observação é obrigatório")]
-        [StringLength(50)]
         [Display(Name = "Observação: ")]
         public bool observacao { get; set; }
 

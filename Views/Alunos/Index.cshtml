@@ -42,7 +42,14 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.dadofamilia.HistoricoFamiliar)
+                    @if (item.dadofamilia.HistoricoFamiliar)
+                    {
+                        @:Pobreza
+                    }
+                    else
+                    {
+                        @:Abandono
+                    }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.nome)

@@ -16,7 +16,14 @@
             @Html.DisplayNameFor(model => model.dadofamilia)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.dadofamilia.HistoricoFamiliar)
+            @if (Model.dadofamilia.HistoricoFamiliar)
+            {
+                @:Pobreza
+            }
+            else
+            {
+                @:Abandono
+            }
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.nome)

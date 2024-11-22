@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+<h1>Adicionar Visita</h1>
 
 <h4>Visita</h4>
 <hr />
@@ -26,8 +26,9 @@
            
             <div class="form-group">
                 <label asp-for="dadofamiliaID" class="control-label">Dado da Família</label>
-                <select asp-for="dadofamiliaID" class="form-control" asp-items="ViewBag.dadofamiliaID">
-                    <option value="">Selecione um Dado da Família</option>
+                <select asp-for="dadofamiliaID" class="form-control">
+                    <option value="0">Pobreza</option>
+                    <option value="1">Abandono</option>
                 </select>
                 <span asp-validation-for="dadofamiliaID" class="text-danger"></span>
             </div>
@@ -50,14 +51,14 @@
 
           
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary btn-block" />
+                <input type="submit" value="Adicionar" class="btn btn-primary btn-block" />
             </div>
         </form>
     </div>
 </div>
 
 <div class="text-center mt-3">
-    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar a lista</a>
 </div>
 
 @section Scripts {

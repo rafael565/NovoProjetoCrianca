@@ -23,7 +23,6 @@ namespace NovoProjetoCrianca.Models
         public int alunoID { get; set; }
 
         [Required(ErrorMessage = "Campo Motivo é obrigatório")]
-        [StringLength(50)]
         [Display(Name = "Motivo: ")]
         public bool motivo { get; set; }
 

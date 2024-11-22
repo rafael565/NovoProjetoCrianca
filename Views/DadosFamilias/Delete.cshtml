@@ -52,7 +52,14 @@
             @Html.DisplayNameFor(model => model.HistoricoFamiliar)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.HistoricoFamiliar)
+            @if (Model.HistoricoFamiliar)
+            {
+                @:Pobreza
+            }
+            else
+            {
+                @:Abandono
+            }
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.endereco)
@@ -76,7 +83,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="id" />
-        <input type="submit" value="Apagar" class="btn btn-danger" /> |
-        <a asp-action="Index">Voltar a lista</a>
+        <input type="submit" value="Apagar" class="btn btn-danger" /> 
+        <a asp-action="Index" class="btn btn-secondary">Voltar a lista</a>
     </form>
 </div>

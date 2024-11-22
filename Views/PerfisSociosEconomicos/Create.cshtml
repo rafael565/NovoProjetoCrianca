@@ -16,9 +16,10 @@
 
             
             <div class="form-group">
-                <label asp-for="dadofamiliaID" class="control-label">Dado da Família</label>
-                <select asp-for="dadofamiliaID" class="form-control" asp-items="ViewBag.dadofamiliaID">
-                    <option value="">Selecione um Dado da Família</option>
+                <label asp-for="dadofamiliaID" class="control-label"></label>
+                <select asp-for="dadofamiliaID" class="form-control">
+                    <option value="0">Pobreza</option>
+                    <option value="1">Abandono</option>
                 </select>
                 <span asp-validation-for="dadofamiliaID" class="text-danger"></span>
             </div>
