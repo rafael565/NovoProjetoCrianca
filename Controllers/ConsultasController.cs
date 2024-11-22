@@ -71,7 +71,7 @@ namespace NovoProjetoCrianca.Controllers
             return View();
         }
 
-        public IActionResult ResFiltrarMatricula(int? id, string nome, string nome2)
+        public IActionResult ResFiltrarMatricula(int? id, string? nome, string? nome2)
         {
             List<Matricula> listaMatricula = new List<Matricula>();
 
@@ -83,7 +83,7 @@ namespace NovoProjetoCrianca.Controllers
                     .Where(a => a.id == id)
                     .ToList();
             }
-            else if (!string.IsNullOrEmpty(nome))
+            else if (!nome.IsNullOrEmpty())
             {
                 listaMatricula = contexto.Matriculas
                     .Include(a => a.aluno)
@@ -91,7 +91,7 @@ namespace NovoProjetoCrianca.Controllers
                     .Where(n => n.aluno.nome.Contains(nome))
                     .ToList();
             }
-            else if (!string.IsNullOrEmpty(nome2))
+            else if (!nome2.IsNullOrEmpty())
             {
                 
                 listaMatricula = contexto.Matriculas
