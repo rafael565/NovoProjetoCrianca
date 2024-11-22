@@ -26,7 +26,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="situacaofamilia" class="control-label"></label>
-                <input asp-for="situacaofamilia" class="form-control" />
+                <select asp-for="situacaofamilia" class="form-control">
+                    <option value="Desabrigado">Desabrigado</option>
+                    <option value="Pobreza">Pobreza</option>
+                    <option value="Media Baixa">Media Baixa</option>
+                </select>
                 <span asp-validation-for="situacaofamilia" class="text-danger"></span>
             </div>
             <div class="form-group">

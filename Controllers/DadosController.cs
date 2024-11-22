@@ -148,7 +148,7 @@ namespace NovoProjetoCrianca.Controllers
                 int dia = randNum.Next(1, 31);
                 DateOnly dataAtendimento = new DateOnly(ano, mes, dia);
                 atendimento.DataAtendimento = dataAtendimento;
-                atendimento.observacao = (Obs)randNum.Next(2);
+                atendimento.observacao = randNum.Next(2) != 0;
                 _context.Atendimentos.Add(atendimento);
             }
 
@@ -256,11 +256,11 @@ namespace NovoProjetoCrianca.Controllers
                 encaminhamento.assistentesocialID = randNum.Next(1, _context.AssistentesSociais.Count() + 1);
                 encaminhamento.alunoID = randNum.Next(1, _context.Alunos.Count() + 1);
                 int ano = randNum.Next(2005, 2024 + 1);
-                int mes = randNum.Next(1, 12);
-                int dia = randNum.Next(1, 31);
+                int mes = randNum.Next(1, 13);
+                int dia = randNum.Next(1, DateTime.DaysInMonth(ano, mes) + 1);
                 DateTime dataEncaminhamento = new DateTime(ano, mes, dia);
                 encaminhamento.DatadeEncaminhamento = dataEncaminhamento;
-                encaminhamento.motivo = (Motivo)randNum.Next(2);
+                encaminhamento.motivo = randNum.Next(2) != 0; 
                 _context.Encaminhamentos.Add(encaminhamento);
             }
 
@@ -276,7 +276,7 @@ namespace NovoProjetoCrianca.Controllers
 
             Random randNum = new Random();
 
-            string[] entidades = {"Conselho Federal de Serviço Social (CFESS)", "Associação Brasileira de Ensino e Pesquisa em Serviço Social (ABEPSS)", "Conselhos Regionais de Serviço Social (CRESS)", "Fórum de Serviço Social", "Instituto Brasileiro de Política e Direito (IBPD)", "Associação Nacional de Assistentes Sociais (ANAS)", "Federação Nacional dos Trabalhadores em Saúde (FENATS)", "Rede Social de Direitos", "Centro de Referência em Serviço Social", "Centro de Defesa dos Direitos Humanos", "Organização Internacional do Trabalho (OIT)", "Fundação Getúlio Vargas (FGV) – Serviço Social", "Instituto de Serviço Social e Políticas Sociais (ISSPS)", "Associação Nacional de Municípios e de Secretários Municipais de Assistência Social (ANAMSS)", "Rede de Proteção Social", "Centro de Capacitação e Formação em Serviço Social", "Conselho Nacional de Assistência Social (CNAS)", "Movimento Nacional de Direitos Humanos", "Associação Brasileira de Política Social", "Instituto de Assistência e Apoio Social"};
+            string[] entidades = { "Conselho Fed. Serv. Social (CFESS)", "Associação Bras. Ensino (ABEPSS)", "Conselhos Reg. Serv. Social (CRESS)", "Fórum de Serviço Social", "Inst. Bras. Pol. e Direito (IBPD)", "Associação Nac. Assist. Soc.", "Fed. Nac. Trab. Saúde (FENATS)", "Rede Social de Direitos", "Centro Ref. em Serv. Social", "Centro Defesa Dir. Humanos", "Org. Internac. do Trabalho (OIT)", "Fundação Getúlio Vargas (FGV)", "Inst. Serv. Social e Políticas", "Assoc. Nac. Municíp. e Sec. Soc.", "Rede de Proteção Social", "Centro Capacitação Serv. Social", "Conselho Nac. Assist. Social", "Movimento Nac. Direitos Humanos", "Associação Bras. Política Soc.", "Inst. Assistência e Apoio Social" };
             string[] nomes_ruas = { "Rua das Flores", "Rua do Sol", "Rua dos Pássaros", "Rua da Paz", "Rua Nova", "Rua do Campo", "Rua Alegre", "Rua Bela Vista", "Rua Esperança", "Rua da Amizade", "Rua das Palmeiras", "Rua da Alegria", "Rua Central", "Rua do Bosque", "Rua da Luz", "Rua da Fonte", "Rua Santa Clara", "Rua do Lago", "Rua do Horizonte", "Rua da Colina" };
 
             for (int i = 0; i < 20; i++)
@@ -342,9 +342,9 @@ namespace NovoProjetoCrianca.Controllers
                 matricula.turmaID = randNum.Next(1, _context.Turmas.Count() + 1);
                 matricula.alunoID = randNum.Next(1, _context.Alunos.Count() + 1);
                 int ano = randNum.Next(2005, 2024 + 1);
-                int mes = randNum.Next(1, 12);
-                int dia = randNum.Next(1, 31);
-                DateTime datamatricula = new DateTime(ano, mes, dia);
+                int mes = randNum.Next(1, 13);
+                int dia = randNum.Next(1, DateTime.DaysInMonth(ano, mes) + 1);
+                DateOnly datamatricula = new DateOnly(ano, mes, dia);
                 matricula.DataMatricula = datamatricula;
                 matricula.statusMatricula = (Status)randNum.Next(2);
                 _context.Matriculas.Add(matricula);
@@ -370,7 +370,17 @@ namespace NovoProjetoCrianca.Controllers
                 PerfilSocioEconomico perfilsocioeconomico = new PerfilSocioEconomico();
                 perfilsocioeconomico.dadofamiliaID = randNum.Next(1, _context.DadosFamilias.Count() + 1);
                 perfilsocioeconomico.rendafamilia = randNum.Next(0, 5000);
-                perfilsocioeconomico.situacaofamilia = (Situacao)randNum.Next(3);
+                if(randNum.Next(3) == 0)
+                {
+                    perfilsocioeconomico.situacaofamilia = "Desabrigado";
+                }else if(randNum.Next(3) == 1)
+                {
+                    perfilsocioeconomico.situacaofamilia = "Pobreza";
+                }
+                else
+                {
+                    perfilsocioeconomico.situacaofamilia = "Media Baixa";
+                };
                 int indiceprofissao = randNum.Next(1, 100);
                 perfilsocioeconomico.profissaoPai = profissoes[indiceprofissao];
                 int indiceprofissao2 = randNum.Next(1, 100);
@@ -461,7 +471,7 @@ namespace NovoProjetoCrianca.Controllers
                 int dia = randNum.Next(1, 31);
                 DateOnly dataAtendimento = new DateOnly(ano, mes, dia);
                 visita.DataAtendimento = dataAtendimento;
-                visita.observacao = (Obs)randNum.Next(2);
+                visita.observacao = randNum.Next(2) != 0;
                 _context.Visitas.Add(visita);
             }
 

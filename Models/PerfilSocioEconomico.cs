@@ -22,7 +22,7 @@ namespace NovoProjetoCrianca.Models
 
         [Required(ErrorMessage = "Campo situação da familia é obrigatório")]
         [StringLength(100)]
-        public Situacao situacaofamilia { get; set; }
+        public string situacaofamilia { get; set; }
 
         [Required(ErrorMessage = "Campo Profissão do pai é obrigatório")]
         [StringLength(35)]

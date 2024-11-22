@@ -40,7 +40,11 @@
 
             <div class="form-group">
                 <label asp-for="observacao" class="control-label">Observação</label>
-                <textarea asp-for="observacao" class="form-control"></textarea>
+                <label asp-for="observacao" class="control-label"></label>
+                <select asp-for="observacao" class="form-control">
+                    <option value="true">Resolvido</option>
+                    <option value="false">Não Resolvido</option>
+                </select>
                 <span asp-validation-for="observacao" class="text-danger"></span>
             </div>
 

@@ -33,7 +33,15 @@
             @Html.DisplayNameFor(model => model.motivo)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.motivo)
+
+            @if (Model.motivo)
+            {
+                @:Evasão Escolar
+            }
+            else
+            {
+                @:Abandono Familiar
+            }
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.DatadeEncaminhamento)

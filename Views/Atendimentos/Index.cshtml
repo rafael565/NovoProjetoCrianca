@@ -41,7 +41,14 @@
                 @Html.DisplayFor(modelItem => item.DataAtendimento)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.observacao)
+                    @if (item.observacao)
+                    {
+                        @:Resolvido
+                    }
+                    else
+                    {
+                        @:Não resolvido
+                    }
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |

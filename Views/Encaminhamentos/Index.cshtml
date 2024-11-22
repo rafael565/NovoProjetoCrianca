@@ -35,7 +35,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.entidade.endereco)
+                @Html.DisplayFor(modelItem => item.entidade.nomeEntidade)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.assistentesocial.cpf)
@@ -44,7 +44,14 @@
                 @Html.DisplayFor(modelItem => item.aluno.email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.motivo)
+                    @if (item.motivo)
+                    {
+                        @:Evasão Escolar
+                    }
+                    else
+                    {
+                        @:Abandono Familiar
+                    }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DatadeEncaminhamento)

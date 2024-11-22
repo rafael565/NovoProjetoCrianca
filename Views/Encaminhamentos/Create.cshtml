@@ -43,7 +43,10 @@
           
             <div class="form-group">
                 <label asp-for="motivo" class="control-label">Motivo</label>
-                <input asp-for="motivo" class="form-control" placeholder="Descreva o motivo do encaminhamento" />
+                <select asp-for="motivo" class="form-control">
+                    <option value="true">Evasão Escolar</option>
+                    <option value="false">Abandono Familiar</option>
+                </select>
                 <span asp-validation-for="motivo" class="text-danger"></span>
             </div>
 

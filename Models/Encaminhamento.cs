@@ -25,7 +25,7 @@ namespace NovoProjetoCrianca.Models
         [Required(ErrorMessage = "Campo Motivo é obrigatório")]
         [StringLength(50)]
         [Display(Name = "Motivo: ")]
-        public Motivo motivo { get; set; }
+        public bool motivo { get; set; }
 
         [Display(Name = "Data do Encaminhamento: ")]
         public DateTime DatadeEncaminhamento { get; set; }

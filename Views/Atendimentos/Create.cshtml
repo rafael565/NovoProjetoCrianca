@@ -37,7 +37,10 @@
                 <!-- Observação -->
                 <div class="form-group">
                     <label asp-for="observacao" class="control-label font-weight-bold">Observação</label>
-                    <input asp-for="observacao" class="form-control" placeholder="Insira observações adicionais" />
+                    <select asp-for="observacao" class="form-control">
+                        <option value="true">Resolvido</option>
+                        <option value="false">Não resolvido</option>
+                    </select>
                     <span asp-validation-for="observacao" class="text-danger"></span>
                 </div>
 

@@ -26,6 +26,6 @@ namespace NovoProjetoCrianca.Models
         [Required(ErrorMessage = "Campo observação é obrigatório")]
         [StringLength(50)]
         [Display(Name = "Observação: ")]
-        public Obs observacao { get; set; }
+        public bool observacao { get; set; }
     }
 }
