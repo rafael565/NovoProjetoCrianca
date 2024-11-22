@@ -112,7 +112,61 @@ namespace NovoProjetoCrianca.Controllers
             return View(listaMatricula);
         }
 
+        public IActionResult FiltrarAtendimento()
+        {
+            return View();
+        }
+
+
+        public IActionResult ResFiltrarAtendimento(int? id, string? nomeAssistente, string? dadoFamilia)
+        {
+            List<Atendimento> listaAtendimento = new List<Atendimento>();
+
+            if (id != null)
+            {
+                listaAtendimento = contexto.Atendimentos
+                    .Include(a => a.assistenteSocial)
+                    .Include(b => b.dadofamilia)
+                    .Where(a => a.id == id)
+                    .ToList();
+            }
+            else if (!nomeAssistente.IsNullOrEmpty())
+            {
+                listaAtendimento = contexto.Atendimentos
+                    .Include(a => a.assistenteSocial)
+                    .Include(b => b.dadofamilia)
+                    .Where(n => n.assistenteSocial.nome.Contains(nomeAssistente))
+                    .ToList();
+            }
+            else if (!dadoFamilia.IsNullOrEmpty())
+            {
+
+                listaAtendimento = contexto.Atendimentos
+                    .Include(a => a.assistenteSocial)
+                    .Include(b => b.dadofamilia)
+                    .Where(n => n.dadofamilia.endereco.Contains(dadoFamilia))
+                    .ToList();
+            }
+            else
+            {
+
+                listaAtendimento = contexto.Atendimentos
+                    .Include(a => a.assistenteSocial)
+                    .Include(b => b.dadofamilia)
+                    .ToList();
+            }
+
+            return View(listaAtendimento);
+        }
+
+
+
+
+
+
     }
+
+
 
 
 }
