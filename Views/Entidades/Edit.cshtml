@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
+<h1>Editar</h1>
 
 <h4>Entidade</h4>
 <hr />
@@ -26,7 +26,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="statusContrato" class="control-label"></label>
-                <input asp-for="statusContrato" class="form-control" />
+                <select asp-for="statusContrato" class="form-control" asp-items="Html.GetEnumSelectList<NovoProjetoCrianca.Enum.Status>()"></select>
                 <span asp-validation-for="statusContrato" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -40,14 +40,14 @@
                 <span asp-validation-for="DatadoFim" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="text-center mt-3">
+    <a asp-action="Index" class="btn btn-outline-secondary">Voltar para a Lista</a>
 </div>
 
 @section Scripts {

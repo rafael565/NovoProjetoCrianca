@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create Entidade</h1>
+<h1>Adicionar Entidade</h1>
 
 <h4>Entidade</h4>
 <hr />
@@ -29,7 +29,7 @@
 
             <div class="form-group">
                 <label asp-for="statusContrato" class="control-label">Status do Contrato</label>
-                <input asp-for="statusContrato" class="form-control" placeholder="Informe o status do contrato" />
+                <select asp-for="statusContrato" class="form-control" asp-items="Html.GetEnumSelectList<NovoProjetoCrianca.Enum.Status>()"></select>
                 <span asp-validation-for="statusContrato" class="text-danger"></span>
             </div>
 
@@ -47,7 +47,7 @@
             </div>
 
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary btn-block" />
+                <input type="submit" value="Adicionar" class="btn btn-primary btn-block" />
             </div>
         </form>
     </div>
