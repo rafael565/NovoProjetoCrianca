@@ -21,11 +21,33 @@ namespace NovoProjetoCrianca.Controllers
         }
 
         // GET: Matriculas
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string nome)
         {
-            var contexto = _context.Matriculas.Include(m => m.aluno).Include(m => m.turma);
-            return View(await contexto.ToListAsync());
+            List<Matricula> ListaMatricula;
+
+            if (!string.IsNullOrEmpty(nome))
+            {
+                ListaMatricula = await _context.Matriculas
+                    .Include(m => m.aluno)
+                    .Include(m => m.turma)
+                    .Where(a => a.aluno.nome.Contains(nome))
+                    .ToListAsync();
+            }
+            else
+            {
+                ListaMatricula = await _context.Matriculas
+                    .Include(m => m.aluno)
+                    .Include(m => m.turma)
+                    .ToListAsync();
+            }
+
+            return View(ListaMatricula);
         }
+
+
+
+
+
 
         // GET: Matriculas/Details/5
         public async Task<IActionResult> Details(int? id)

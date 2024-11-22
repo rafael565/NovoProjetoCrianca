@@ -10,6 +10,8 @@
 <p>
     <a asp-action="FiltrarMatricula">Filtrar</a>
 </p>
+
+
 <table class="table">
     <thead>
         <tr>
@@ -29,6 +31,14 @@
         </tr>
     </thead>
     <tbody>
+
+        @{
+            int cont = 0;
+            int soma = 0;
+            int soma2 = 0;
+
+
+        }
 @foreach (var item in Model) {
         <tr>
             <td>
@@ -48,7 +58,17 @@
                 <a asp-action="Details" asp-route-id="@item.id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
             </td>
-        </tr>
+            </tr>
+
+            soma = soma + item.turmaID;
+            soma2 = soma2 + item.alunoID;
+            cont++;
 }
     </tbody>
 </table>
+
+<h3>Total de soma dos registro do Aluno:@soma2</h3>
+
+<h3>Total de soma dos registro da Turma:@soma</h3>
+
+<h3>Total de registro impressos:@cont</h3>

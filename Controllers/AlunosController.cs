@@ -22,11 +22,18 @@ namespace NovoProjetoCrianca.Controllers
         }
 
         // GET: Alunos
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string nome)
         {
-            var contexto = _context.Alunos.Include(a => a.dadofamilia);
-            return View(await contexto.ToListAsync());
+            List<Aluno> ListaAluno = new List<Aluno>();
+            if(nome!=null)
+                ListaAluno= await _context.Alunos.Include(a => a.dadofamilia).Where(a=>a.nome.Contains(nome)).ToListAsync();
+            else ListaAluno = await _context.Alunos.Include(a => a.dadofamilia).ToListAsync();
+            return View(ListaAluno);
+
+
         }
+
+
 
         // GET: Alunos/Details/5
         public async Task<IActionResult> Details(int? id)

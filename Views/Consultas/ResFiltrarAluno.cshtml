@@ -36,6 +36,11 @@
         </tr>
     </thead>
     <tbody>
+        @{
+            int cont = 0;
+            
+
+        }
 @foreach (var item in Model) {
         <tr>
             
@@ -62,7 +67,11 @@
                 <a asp-action="Details" asp-route-id="@item.id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
             </td>
-        </tr>
-}
+            </tr>
+           
+            cont++;
+        }
     </tbody>
 </table>
+
+<h3>Total de registro impressos:@cont</h3>
