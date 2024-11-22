@@ -27,7 +27,14 @@
             @Html.DisplayNameFor(model => model.Presenca)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Presenca)
+            @if (Model.Presenca)
+            {
+                @:Sim
+            }
+            else
+            {
+                @:Não
+            }
         </dd>
     </dl>
 </div>

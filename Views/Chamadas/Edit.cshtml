@@ -26,7 +26,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="Presenca" class="control-label"></label>
-                <input asp-for="Presenca" class="form-control" />
+                <select asp-for="Presenca" class="form-control">
+                    <option value="true">Sim</option>
+                    <option value="false">Não</option>
+                </select>
                 <span asp-validation-for="Presenca" class="text-danger"></span>
             </div>
             <div class="form-group">

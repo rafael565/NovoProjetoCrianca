@@ -35,8 +35,8 @@
                     <label asp-for="Presenca" class="control-label font-weight-bold">Presença</label>
                     <select asp-for="Presenca" class="form-control">
                         <option value="">Selecione a Presença</option>
-                        <option value="sim">Presente</option>
-                        <option value="nao">Ausente</option>
+                        <option value="true">Presente</option>
+                        <option value="false">Ausente</option>
                     </select>
                     <span asp-validation-for="Presenca" class="text-danger"></span>
                 </div>

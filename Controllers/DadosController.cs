@@ -205,7 +205,7 @@ namespace NovoProjetoCrianca.Controllers
                 int dia = randNum.Next(1, 31);
                 DateTime dataChamada = new DateTime(ano, mes, dia);
                 chamada.DatadeChamada = dataChamada;
-                chamada.Presenca = (Presenca)randNum.Next(2);
+                chamada.Presenca = randNum.Next(2) != 0;
                 _context.Chamadas.Add(chamada);
             }
 

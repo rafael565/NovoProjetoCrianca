@@ -35,7 +35,14 @@
                 @Html.DisplayFor(modelItem => item.DatadeChamada)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Presenca)
+                    @if (item.Presenca)
+                    {
+                        @: Sim
+                    }
+                    else
+                    {
+                        @:Não
+                    }
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |

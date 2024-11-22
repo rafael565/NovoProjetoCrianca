@@ -21,7 +21,7 @@ namespace NovoProjetoCrianca.Models
         [Required(ErrorMessage = "Campo Presença é obrigatório")]
         [StringLength(3)]
         [Display(Name = "Presença: ")]
-        public Presenca Presenca { get; set; }
+        public bool Presenca { get; set; }
         
 
     }
