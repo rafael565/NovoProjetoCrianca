@@ -1,0 +1,51 @@
+﻿@model NovoProjetoCrianca.Models.Matricula
+
+@{
+    ViewData["Title"] = "Filtrar Matrícula";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Filtrar Matrículas</h1>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form asp-action="ResFiltrarMatricula">
+            <!-- Campo para filtrar por ID da matrícula -->
+            <div class="form-group">
+                <label for="idMatricula">ID da Matrícula:</label>
+                <input type="text" id="idMatricula" name="id" class="form-control" placeholder="Digite o ID da matrícula" />
+            </div>
+            <br />
+
+            <!-- Campo para filtrar por nome do aluno -->
+            <div class="form-group">
+                <label for="nomeAluno">Nome do Aluno:</label>
+                <input type="text" id="nomeAluno" name="nome" class="form-control" placeholder="Digite o nome do aluno" />
+            </div>
+            <br />
+
+            <!-- Campo para filtrar por nome da turma -->
+            <div class="form-group">
+                <label for="nomeTurma">Nome da Turma:</label>
+                <input type="text" id="nomeTurma" name="nome2" class="form-control" placeholder="Digite o nome da turma" />
+            </div>
+            <br />
+
+            <!-- Botão de submissão -->
+            <div class="form-group text-center">
+                <input type="submit" value="Filtrar" class="btn btn-success btn-lg" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="text-center mt-3">
+    <a asp-action="Index" class="btn btn-outline-secondary">Voltar para a Lista</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

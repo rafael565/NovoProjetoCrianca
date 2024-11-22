@@ -1,0 +1,44 @@
+﻿@model NovoProjetoCrianca.Models.Aluno
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Filtrar Alunos</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-action="ResFiltrarAluno">
+
+
+            <div class="form-group">
+                <label for="idAluno">Informe o ID do Aluno:</label>
+                <input type="text" id="idAluno" name="id" class="form-control" placeholder="Digite o ID do aluno" />
+            </div>
+            <br />
+
+            <div class="form-group">
+                <label for="idAluno">Informe o Nome do Aluno:</label>
+                <input type="text" id="idAluno" name="nome" class="form-control" placeholder="Digite o nome do aluno" />
+            </div>
+            <br />
+
+                <div class="form-group text-center">
+                    <input type="submit" value="Filtrar" class="btn btn-success btn-lg" />
+                </div>
+            <br />
+            </form>
+        </div>
+    </div>
+
+    <div class="text-center mt-3">
+        <a asp-action="Index" class="btn btn-outline-secondary">Voltar para a Lista</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

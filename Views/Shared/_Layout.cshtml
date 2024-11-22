@@ -69,12 +69,17 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-dark" href="#" id="Agrupamentos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Consultas Por Agrupamentos
+                                    Consultas
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="Agrupamentos">
                                     <li><a class="dropdown-item" asp-area="" asp-controller="Consultas" asp-action="ProfesTurmCurso">Consultar Professor</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Consultas" asp-action="FiltrarAluno">Consultar Alunos</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Consultas" asp-action="FiltrarMatricula">Consultar Matriculas</a></li>
+
                                 </ul>
                             </li>
+
+
 
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Entidades" asp-action="Index">Entidades</a>
