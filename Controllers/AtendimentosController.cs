@@ -21,11 +21,33 @@ namespace NovoProjetoCrianca.Controllers
         }
 
         // GET: Atendimentos
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string nomeAssistente)
         {
-            var contexto = _context.Atendimentos.Include(a => a.assistenteSocial).Include(a => a.dadofamilia);
-            return View(await contexto.ToListAsync());
+            List<Atendimento> ListaAtendimento;
+
+            if (!string.IsNullOrEmpty(nomeAssistente))
+            { 
+                ListaAtendimento = await _context.Atendimentos
+                    .Include(a => a.assistenteSocial)
+                    .Include(a => a.dadofamilia)
+                    .Where(a => a.assistenteSocial.nome.Contains(nomeAssistente))
+                    .ToListAsync();
+            }
+            else
+            {
+                ListaAtendimento = await _context.Atendimentos
+                    .Include(a => a.assistenteSocial)
+                    .Include(a => a.dadofamilia)
+                    .ToListAsync(); 
+            }
+
+            return View(ListaAtendimento);
         }
+
+
+
+
+
 
         // GET: Atendimentos/Details/5
         public async Task<IActionResult> Details(int? id)

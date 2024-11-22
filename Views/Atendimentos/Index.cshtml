@@ -10,6 +10,24 @@
 <p>
     <a asp-action="Create" class="btn btn-secondary">Adicionar Atendimento</a>
 </p>
+
+<form asp-action="index">
+
+
+
+
+    <div class="form-group">
+        <label for="idAluno">Informe o Nome do Assistente Social:</label>
+        <input type="text" id="idAssistente" name="nomeAssistente" class="form-control" placeholder="Digite o nome do assistente" />
+    </div>
+
+
+
+    <div class="form-group text-center">
+        <input type="submit" value="Filtrar" class="btn btn-success btn-lg" />
+    </div>
+    <br />
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -32,7 +50,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.assistenteSocial.cpf)
+                @Html.DisplayFor(modelItem => item.assistenteSocial.nome)
             </td>
             <td>
                     @if (item.dadofamilia.HistoricoFamiliar)

@@ -10,6 +10,23 @@
 <p>
     <a asp-action="Create" class="btn btn-secondary">Adicionar Matricula</a>
 </p>
+
+<form asp-action="Index">
+
+
+    <!-- Campo para filtrar por nome do aluno -->
+    <div class="form-group">
+        <label for="nomeAluno">Nome do Aluno:</label>
+        <input type="text" id="nomeAluno" name="nome" class="form-control" placeholder="Digite o nome do aluno" />
+    </div>
+    <br />
+
+
+    <!-- Botão de submissão -->
+    <div class="form-group text-center">
+        <input type="submit" value="Filtrar" class="btn btn-success btn-lg" />
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
